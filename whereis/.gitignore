@@ -1,0 +1,16 @@
+.DS_Store
+log/*.log
+log/*
+tmp/**/*
+config/database.yml
+config/database.mongo.yml
+config/initializers/paperclip.rb
+
+lib/log/*
+public/flvs/**/*
+public/_files/**/*
+upload/**/*
+
+
+test/log/*
+solr/**/*

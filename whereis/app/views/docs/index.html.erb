@@ -1,0 +1,27 @@
+<div>
+  <%= link_to("new", new_doc_path) %>
+  |
+  <%= link_to("reindex solr", reindex_solr_docs_path) %>
+</div>
+<div>
+  <% form_tag @search, :method => :get do %>
+    <%= text_area_tag :q, params[:q], :rows => 8, :cols => 40 %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
+
+<% unless @docs.nil? %>
+  <h3>Total: <%= @docs.total %></h3>
+
+  <p>
+  <% @docs.raw_results.each do |doc| %>
+    <div>
+      <%= link_to(doc.instance.title, doc_path(doc.instance)) %>
+      (<%= doc.score %>)
+    </div>
+  <% end %>
+  </p>
+
+  <p> <%= will_paginate(@entries) %> </p>
+<% end %>
+

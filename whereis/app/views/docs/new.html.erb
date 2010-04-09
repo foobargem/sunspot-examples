@@ -1,0 +1,7 @@
+<% form_for @doc do |f| %>
+  <%= f.label :title %>
+    <%= f.text_field :title %> <br />
+  <%= f.label :content %>
+    <%= f.text_area :content %> <br />
+  <%= f.submit "write" %>
+<% end %>
